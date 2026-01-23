@@ -1,0 +1,25 @@
+// LeetCode 1920 - Build Array from Permutation
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+import java.util.*;
+class Solution {
+    public static int[] buildArray(int[] nums) {
+        int s=nums.length;
+        int[] ans=new int[s];
+        for(int i=0;i<s;i++){
+            ans[i]=nums[nums[i]];
+        }
+        return ans;
+    }
+    public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int[] nums=new int[n];
+    for(int i=0;i<n;i++){
+        nums[i]=sc.nextInt();
+    }
+    int[] res=buildArray(nums);
+    System.out.println(Arrays.toString(res));
+    }
+}
