@@ -1,0 +1,25 @@
+// LeetCode 1480 - Running Sum of 1D Array
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+class Solution {
+    public static int[] runningSum(int[] nums) {
+        int[] arr=new int[nums.length];
+        int Sum=0;
+        for(int i=0;i<nums.length;i++){
+            Sum+=nums[i];
+            arr[i]=Sum;
+        }
+        return arr;
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int[] nums=new int[size];
+        for(int i=0;i<size;i++){
+            nums[i]= sc.nextInt();
+        }
+        int[] ans=runningSum(nums);
+        System.out.println(Arrays.toString(ans));
+    }
+}
