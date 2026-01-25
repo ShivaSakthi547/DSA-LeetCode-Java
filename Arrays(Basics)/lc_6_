@@ -1,0 +1,33 @@
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+
+import java.util.*;
+
+class Solution {
+    public static int[] shuffle(int[] nums, int n) {
+        int[] ans = new int[2 * n];
+        int index = 0;
+
+        for (int i = 0; i < n; i++) {
+            ans[index++] = nums[i];      // x part
+            ans[index++] = nums[i + n];  // y part
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] nums = new int[size];
+        for (int i = 0; i < size; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        int n = sc.nextInt();
+        int[] ans = shuffle(nums, n);
+
+        System.out.println(Arrays.toString(ans));
+    }
+}
