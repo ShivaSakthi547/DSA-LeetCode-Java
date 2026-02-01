@@ -1,0 +1,27 @@
+// LeetCode 169: Majority Element
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int n = nums.length;
+        int half = n / 2;
+        int i;
+
+        for (i = 0; i < n; i++) {
+            int count = 0; // reset for each element
+
+            for (int j = i; j < n; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+
+            if (count > half) {
+                return nums[i];
+            }
+        }
+
+        return nums[0]; // as per problem, majority element always exists
+    }
+}
