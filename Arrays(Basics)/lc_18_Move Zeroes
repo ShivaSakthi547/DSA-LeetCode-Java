@@ -1,0 +1,27 @@
+// LeetCode 283: Move Zeroes
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int len = nums.length;
+        int index = 0;
+
+        for (int i = 0; i < len; i++) {
+            if (nums[i] != 0) {
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+
+        while (index < len) {
+            nums[index] = 0;
+            index++;
+        }
+
+        System.out.println(Arrays.toString(nums));
+    }
+}
