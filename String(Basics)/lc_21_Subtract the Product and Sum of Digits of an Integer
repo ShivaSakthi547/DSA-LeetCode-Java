@@ -1,0 +1,19 @@
+//LeetCode 1281 – Subtract the Product and Sum of Digits of an Integer
+//Time Complexity: O(d)
+//Space Complexity: O(1)
+
+class Solution {
+    public int subtractProductAndSum(int n) {
+        int Sum = 0;
+        int Product = 1;
+        int num = 0;
+
+        while (n > 0) {
+            num = n % 10;
+            Sum = Sum + num;
+            Product = Product * num;
+            n = n / 10;
+        }
+        return Product - Sum;
+    }
+}
