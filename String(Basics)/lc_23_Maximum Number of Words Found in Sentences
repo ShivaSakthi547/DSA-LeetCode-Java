@@ -1,0 +1,18 @@
+// LeetCode 2114 – Maximum Number of Words Found in Sentences
+// Time Complexity: O(n * m)  
+// Space Complexity: O(m)    
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int max = 0;
+        for (int i = 0; i < sentences.length; i++) {
+            sentences[i].trim();
+            String[] arr = sentences[i].split(" ");
+            int len = arr.length;
+            if (len > max) {
+                max = len;
+            }
+        }
+        return max;
+    }
+}
