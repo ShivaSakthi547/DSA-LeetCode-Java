@@ -1,0 +1,36 @@
+/*
+LeetCode 14 – Longest Common Prefix
+Time Complexity: O(n * m)
+Space Complexity: O(1)
+*/
+
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        int len = strs.length;
+        String res = "";
+        String st1 = strs[0];
+        String st2;
+
+        for (int i = 0; i < strs[0].length(); i++) {
+            int c = 0;
+            for (int j = 1; j < len; j++) {
+                st2 = strs[j];
+                if ((i < st2.length()) && (st1.charAt(i) == st2.charAt(i))) {
+                    c++;
+                } else {
+                    break;
+                }
+            }
+            if (c == len - 1) {
+                res = res + st1.charAt(i);
+            } else {
+                break;
+            }
+        }
+        return res;
+    }
+}
