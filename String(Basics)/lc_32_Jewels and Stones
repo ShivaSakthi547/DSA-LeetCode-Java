@@ -1,0 +1,19 @@
+/*
+LeetCode 771: Jewels and Stones
+Time Complexity: O(n * m)
+Space Complexity: O(1)
+*/
+
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int count = 0;
+
+        for (int i = 0; i < stones.length(); i++) {
+            char ch = stones.charAt(i);
+            if (jewels.contains(ch + "")) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
