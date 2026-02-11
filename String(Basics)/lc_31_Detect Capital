@@ -1,0 +1,38 @@
+/*
+LeetCode 520: Detect Capital
+Time Complexity: O(n)
+Space Complexity: O(1)
+*/
+
+class Solution {
+    public boolean detectCapitalUse(String word) {
+        int len = word.length();
+        boolean res = false;
+        int UCount = 0;
+
+        for (int i = 0; i < len; i++) {
+            char ch = word.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                UCount++;
+            }
+        }
+
+        // Case 1: All letters are uppercase
+        if (UCount == len) {
+            res = true;
+        }
+        // Case 2: All letters are lowercase
+        else if (UCount == 0) {
+            res = true;
+        }
+        // Case 3: Only first letter is uppercase
+        else {
+            if (Character.isUpperCase(word.charAt(0)) &&
+                word.substring(1).equals(word.substring(1).toLowerCase())) {
+                res = true;
+            }
+        }
+
+        return res;
+    }
+}
