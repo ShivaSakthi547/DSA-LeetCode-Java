@@ -1,0 +1,14 @@
+// LeetCode 1816 - Truncate Sentence
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+class Solution {
+    public String truncateSentence(String s, int k) {
+        String[] s_arr = s.split(" ");
+        String result = "";
+        for (int i = 0; i < k; i++) {
+            result = result + s_arr[i] + " ";
+        }
+        return result.trim();
+    }
+}
